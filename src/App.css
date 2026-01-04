@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  background-color: #0f172a;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: #1e293b;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  color: #e5e7eb;
+}
+
+h1 {
+  color: #22c55e;
+  margin-bottom: 12px;
+}
