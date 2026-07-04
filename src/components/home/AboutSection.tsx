@@ -2,6 +2,9 @@
 import { useInView } from '../../hooks/useInView';
 import './AboutSection.css';
 
+const aboutImage =
+  'https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?q=80&w=2071&auto=format&fit=crop';
+
 type StatItem = {
   value: string;
   label: string;
@@ -10,33 +13,40 @@ type StatItem = {
 
 const stats: StatItem[] = [
   {
-    value: '10+',
-    label: 'Projects',
+    value: '3',
+    label: 'Games',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        <line x1="6" y1="12" x2="10" y2="12"></line>
+        <line x1="8" y1="10" x2="8" y2="14"></line>
+        <line x1="15" y1="13" x2="15.01" y2="13"></line>
+        <line x1="18" y1="11" x2="18.01" y2="11"></line>
+        <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path>
       </svg>
     ),
   },
   {
-    value: '500K+',
-    label: 'Players',
+    value: '1',
+    label: 'Live',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-        <circle cx="9" cy="7" r="4"></circle>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        <circle cx="12" cy="12" r="2"></circle>
+        <path d="M16.24 7.76a6 6 0 0 1 0 8.49"></path>
+        <path d="M7.76 7.76a6 6 0 0 0 0 8.49"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        <path d="M4.93 4.93a10 10 0 0 0 0 14.14"></path>
       </svg>
     ),
   },
   {
-    value: '24/7',
-    label: 'Support',
+    value: '2026',
+    label: 'Founded',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
       </svg>
     ),
   },
@@ -57,17 +67,18 @@ const AboutSection: React.FC = () => {
       <div className="container about-grid">
         <div className="about-content">
           <h2 className="section-title">
-            About <span className="gradient-text">MiraGaming</span>
+            About <span className="gradient-text">Mira Gaming</span>
           </h2>
           <p className="about-text">
-            <span className="gradient-text">MiraGaming</span> is a creative game development studio focused on building fun, competitive, and immersive gaming experiences.
-            We push the boundaries of technology to create worlds that players never want to leave.
+            <span className="gradient-text">Mira Gaming Private Limited</span> is an independent game development
+            company focused on accessible, high-quality mobile entertainment. Founded in 2026, we combine thoughtful
+            design with reliable engineering to build games our players enjoy returning to.
           </p>
 
           <div className="about-highlights">
-            <span>Realtime multiplayer architecture</span>
-            <span>Retention-focused UX systems</span>
-            <span>Performance-first art pipeline</span>
+            <span>Walk Champ — available on mobile</span>
+            <span>Trivia Coin & Vibe Link — in active development</span>
+            <span>Mobile-first design and engineering</span>
           </div>
 
           <div className="stats-grid">
@@ -90,16 +101,13 @@ const AboutSection: React.FC = () => {
         <div className="about-image-wrapper">
           <div className="image-border"></div>
           <img
-            src="https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?q=80&w=2071&auto=format&fit=crop"
-            alt="Gaming Setup"
+            src={aboutImage}
+            alt="Gaming setup"
             className="about-img"
           />
           <div className="logo-overlay">
-            <span className="logo-mira">M</span>
-          </div>
-          <div className="floating-card">
-            <p>Studio Stack</p>
-            <strong>Unity + Unreal + WebGL</strong>
+            <span className="logo-mira">Mira</span>
+            <span className="logo-gaming">Gaming</span>
           </div>
         </div>
       </div>

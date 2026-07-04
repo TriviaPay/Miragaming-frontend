@@ -1,4 +1,7 @@
 import React from 'react';
+import Lottie from 'lottie-react';
+import heroBg from '../../assets/bg.png';
+import hiThereAnimation from '../../assets/Hi there!.json';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -6,57 +9,19 @@ const Hero: React.FC = () => {
     <section className="hero-section section-shell" id="home">
       <div className="hero-background">
         <img
-          src="https://stock.adobe.com/search?k=games+pattern"
-          alt="Games pattern banner"
+          src={heroBg}
+          alt="Mira Gaming studio background"
           className="hero-bg-img"
-          onError={(e) => {
-            e.currentTarget.src =
-              'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop';
-          }}
         />
-        <div className="hero-overlay" />
-        <div className="hero-grid-overlay" />
-        <div className="hero-animated-layers" aria-hidden="true">
-          <div className="hero-scanline" />
-          <div className="hero-hud-ring hero-hud-ring-a" />
-          <div className="hero-hud-ring hero-hud-ring-b" />
-          <div className="hero-energy-orb" />
-          <div className="hero-particle-field">
-            <span className="particle p1" />
-            <span className="particle p2" />
-            <span className="particle p3" />
-            <span className="particle p4" />
-            <span className="particle p5" />
-            <span className="particle p6" />
-            <span className="particle p7" />
-          </div>
-          <div className="hero-laser-trails">
-            <span className="laser laser-a" />
-            <span className="laser laser-b" />
-            <span className="laser laser-c" />
-          </div>
-          <div className="hero-target-nodes">
-            <span className="target-node node-a" />
-            <span className="target-node node-b" />
-            <span className="target-node node-c" />
-          </div>
-          <div className="hero-input-cluster">
-            <span className="input-chip chip-a">A</span>
-            <span className="input-chip chip-b">B</span>
-            <span className="input-chip chip-x">X</span>
-            <span className="input-chip chip-y">Y</span>
-          </div>
-        </div>
       </div>
 
       <div className="container hero-content">
         <div className="hero-text-wrapper">
-          <p className="hero-kicker">Fun Casual Games</p>
-          <h1 className="hero-title">
-            <span className="gradient-text">MiraGaming</span>
-          </h1>
+          <h1 className="hero-visually-hidden">Mira Gaming</h1>
+          <p className="hero-kicker">Independent Game Studio</p>
           <p className="hero-subtitle">
-            Play Snake & Ladder, Ludo, and Trivia Coin in one fast, colorful, and competitive gaming hub.
+            Mira Gaming Private Limited designs and publishes mobile games built for everyday play.
+            Walk Champ is available now; Trivia Coin and Vibe Link are in active development.
           </p>
 
           <div className="hero-actions">
@@ -72,64 +37,48 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          <div className="hero-status-ticker" aria-label="Live studio events">
+          <div className="hero-status-ticker" aria-label="Studio updates">
             <div className="ticker-track">
-              <span>Snake & Ladders Live Rooms</span>
-              <span>Ludo League Tournament Open</span>
-              <span>Trivia Coin Daily Challenge</span>
-              <span>Quiz Master Bonus Round</span>
+              <span>Walk Champ — Now Available</span>
+              <span>Trivia Coin — In Development</span>
+              <span>Vibe Link — In Development</span>
+              <span>Mira Gaming Private Limited</span>
             </div>
             <div className="ticker-track" aria-hidden="true">
-              <span>Snake & Ladders Live Rooms</span>
-              <span>Ludo League Tournament Open</span>
-              <span>Trivia Coin Daily Challenge</span>
-              <span>Quiz Master Bonus Round</span>
+              <span>Walk Champ — Now Available</span>
+              <span>Trivia Coin — In Development</span>
+              <span>Vibe Link — In Development</span>
+              <span>Mira Gaming Private Limited</span>
             </div>
           </div>
 
           <div className="hero-metrics">
             <div className="metric-pill">
-              <span className="metric-value">4+</span>
-              <span className="metric-label">Featured Games</span>
+              <span className="metric-value">3</span>
+              <span className="metric-label">Pipeline</span>
             </div>
             <div className="metric-pill">
-              <span className="metric-value">1M+</span>
-              <span className="metric-label">Matches Played</span>
+              <span className="metric-value">1</span>
+              <span className="metric-label">Live</span>
             </div>
             <div className="metric-pill">
-              <span className="metric-value">24/7</span>
-              <span className="metric-label">Live Tournaments</span>
+              <span className="metric-value">2</span>
+              <span className="metric-label">In Development</span>
             </div>
           </div>
         </div>
 
-        <aside className="hero-surface glass-morphism" aria-label="Studio highlights">
-          <div className="surface-header">
-            <p>Live Gaming Snapshot</p>
-            <span className="live-dot">Online</span>
+        <div className="hero-mascot" aria-hidden="true">
+          <div className="hero-mascot-scene">
+            <div className="hero-mascot-ring hero-mascot-ring-a" />
+            <div className="hero-mascot-ring hero-mascot-ring-b" />
+            <Lottie
+              animationData={hiThereAnimation}
+              loop
+              className="hero-mascot-lottie"
+            />
           </div>
-          <div className="surface-row">
-            <span>Active board tables</span>
-            <strong>12,480</strong>
-          </div>
-          <div className="surface-row">
-            <span>Trivia coin pool</span>
-            <strong>243,000</strong>
-          </div>
-          <div className="surface-row">
-            <span>Mini-game top score</span>
-            <strong>9,820</strong>
-          </div>
-          <div className="surface-chart">
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-            <div className="bar" />
-          </div>
-        </aside>
+        </div>
       </div>
     </section>
   );

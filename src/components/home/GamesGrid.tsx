@@ -1,5 +1,8 @@
 import React, { type CSSProperties } from 'react';
 import { useInView } from '../../hooks/useInView';
+import walkChampImg from '../../assets/walkchamp.png';
+import triviCoinImg from '../../assets/triviacoin.png';
+import vibeLinkImg from '../../assets/vibelink.png';
 import './GamesGrid.css';
 
 type Game = {
@@ -9,9 +12,13 @@ type Game = {
   color: string;
   genre: string;
   platform: string;
+  status: 'Live' | 'Under Development';
+  playStoreUrl?: string;
+  appStoreUrl?: string;
 };
 
-const games: Game[] = [
+/*
+const legacyGames: Game[] = [
   {
     title: 'COIN DROP DASH',
     description: 'Master the gravity-defying challenge, collect coins, and outpace the clock in this hyper-casual thrill.',
@@ -19,6 +26,7 @@ const games: Game[] = [
     color: '#fbbf24',
     genre: 'Hyper Casual',
     platform: 'Web + App',
+    status: 'Under Development',
   },
   {
     title: 'LUDO LEAGUE',
@@ -27,6 +35,7 @@ const games: Game[] = [
     color: '#a78bfa',
     genre: 'Family PvP',
     platform: 'Mobile + PC',
+    status: 'Under Development',
   },
   {
     title: 'SNAKE & LADDER',
@@ -35,6 +44,7 @@ const games: Game[] = [
     color: '#2563eb',
     genre: 'Board Classic',
     platform: 'Mobile + Web',
+    status: 'Under Development',
   },
   {
     title: 'TRIVIA COIN',
@@ -43,6 +53,40 @@ const games: Game[] = [
     color: '#f97316',
     genre: 'Quiz Battle',
     platform: 'Web + App',
+    status: 'Under Development',
+  },
+];
+*/
+
+const games: Game[] = [
+  {
+    title: 'WALK CHAMP',
+    description: 'Turn every step into a win. Compete in walking challenges, climb leaderboards, and stay active with friends.',
+    image: walkChampImg,
+    color: '#22c55e',
+    genre: 'Fitness PvP',
+    platform: 'Mobile',
+    status: 'Live',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.miragaming.walkchamp',
+    appStoreUrl: 'https://apps.apple.com/app/walk-champ/id1234567890',
+  },
+  {
+    title: 'TRIVIA COIN',
+    description: 'Answer timed trivia rounds, build streaks, and earn coins on the leaderboard. Currently in active development.',
+    image: triviCoinImg,
+    color: '#f97316',
+    genre: 'Quiz Battle',
+    platform: 'Web + App',
+    status: 'Under Development',
+  },
+  {
+    title: 'VIBE LINK',
+    description: 'Connect, share vibes, and play together in a social gaming experience. Coming soon from Mira Gaming.',
+    image: vibeLinkImg,
+    color: '#a78bfa',
+    genre: 'Social Play',
+    platform: 'Mobile + Web',
+    status: 'Under Development',
   },
 ];
 
@@ -63,7 +107,7 @@ const GamesGrid: React.FC = () => {
           <p className="section-tag">OUR GAMES</p>
           <h2 className="section-title">Games Developed</h2>
           <p className="section-subtitle">
-            Casual board and quiz titles from <span className="gradient-text">MiraGaming</span>, crafted for fast fun and replay.
+            Explore our lineup from <span className="gradient-text">Mira Gaming</span> — one title live today and two more in active development.
           </p>
           <div className="title-glow"></div>
         </div>
@@ -88,15 +132,41 @@ const GamesGrid: React.FC = () => {
                 <p className="game-desc">{game.description}</p>
                 <div className="game-meta">
                   <span>{game.platform}</span>
-                  <span>Live Ops Ready</span>
+                  <span className={game.status === 'Live' ? 'status-live' : 'status-dev'}>
+                    {game.status}
+                  </span>
                 </div>
-                <a href="#" className="learn-more">
-                  Learn More
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
+                {game.status === 'Live' && (game.playStoreUrl || game.appStoreUrl) ? (
+                  <div className="store-links-wrap">
+                    <p className="store-links-label">Available on</p>
+                    <div className="store-links">
+                      {game.playStoreUrl ? (
+                        <a
+                          href={game.playStoreUrl}
+                          className="store-link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Get on Google Play
+                        </a>
+                      ) : null}
+                      {game.appStoreUrl ? (
+                        <a
+                          href={game.appStoreUrl}
+                          className="store-link store-link-apple"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Get on App Store
+                        </a>
+                      ) : null}
+                    </div>
+                  </div>
+                ) : game.status === 'Live' ? (
+                  <span className="learn-more coming-soon">Coming Soon</span>
+                ) : (
+                  <span className="learn-more coming-soon">Coming Soon</span>
+                )}
               </div>
             </article>
           ))}

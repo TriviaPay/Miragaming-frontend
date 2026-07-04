@@ -5,7 +5,6 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'Games', href: '#games' },
   { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 const Navbar: React.FC = () => {
@@ -49,7 +48,7 @@ const Navbar: React.FC = () => {
       <div className="container nav-content">
         <a className="logo" href="#home" onClick={closeMenu}>
           <span className="logo-mira">Mira</span>
-          <span className="logo-gaming gradient-text">Gaming</span>
+          <span className="logo-gaming">Gaming</span>
         </a>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>

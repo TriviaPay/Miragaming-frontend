@@ -97,28 +97,28 @@
 
 .social-icons {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.55rem;
   margin-top: 0.8rem;
 }
 
 .social-icon {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
   border-radius: 10px;
-  border: 1px solid rgba(37, 99, 235, 0.28);
-  background: rgba(239, 246, 255, 0.82);
-  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .social-icon:hover {
   transform: translateY(-2px);
-  border-color: rgba(37, 99, 235, 0.58);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
 }
 
 .message-form {
@@ -155,6 +155,44 @@
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
 }
 
+.form-input:disabled,
+.form-textarea:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-textarea-wrap {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-char-count {
+  margin: 0;
+  text-align: right;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.form-char-count-low {
+  color: #c2410c;
+}
+
+.form-feedback {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.form-feedback-success {
+  color: #15803d;
+}
+
+.form-feedback-error {
+  color: #c2410c;
+}
+
 .send-btn {
   display: inline-flex;
   align-items: center;
@@ -171,6 +209,12 @@
 
 .send-btn:hover {
   transform: translateY(-2px);
+}
+
+.send-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .careers-text {
@@ -192,10 +236,6 @@
 }
 
 .openings-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8rem;
   border-bottom: 1px solid rgba(37, 99, 235, 0.16);
   padding: 0.56rem 0;
   color: #344256;
@@ -211,18 +251,19 @@
   transform: translateY(0);
 }
 
-.openings-list li:hover {
-  color: #0f172a;
+.careers-note {
+  color: #52637a;
+  font-size: 0.84rem;
+  line-height: 1.6;
 }
 
-.view-careers-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
+.careers-note a {
   color: #1d4ed8;
-  font-size: 0.84rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
+}
+
+.careers-note a:hover {
+  color: #1e3a8a;
 }
 
 .partnership-section {
@@ -251,6 +292,7 @@
   padding: 0.74rem;
   font-size: 0.82rem;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .partnership-btn:hover {
@@ -293,16 +335,15 @@
 }
 
 .icon-box-small {
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
-  border: 1px solid rgba(37, 99, 235, 0.26);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #1d4ed8;
-  font-size: 0.67rem;
-  background: rgba(239, 246, 255, 0.82);
+  background: #ffffff;
+  transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .icon-box-small:hover {
