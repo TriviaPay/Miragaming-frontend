@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0 0 auto;
   z-index: 1000;
-  padding: 1rem 0;
+  padding: 0.65rem 0;
   transition: background-color 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
 }
 
@@ -46,11 +46,11 @@
 }
 
 .logo-img {
-  width: calc(2.35rem + 10px);
-  height: calc(2.35rem + 10px);
+  width: calc(2.35rem + 30px);
+  height: calc(2.35rem + 30px);
   object-fit: contain;
   flex-shrink: 0;
-  mix-blend-mode: screen;
+  display: block;
 }
 
 .logo .logo-mira {
@@ -228,7 +228,7 @@
 
 @media (max-width: 768px) {
   .fixed-navbar {
-    padding: 0.85rem 0;
+    padding: 0.6rem 0;
   }
 
   .logo {
@@ -236,8 +236,8 @@
   }
 
   .logo-img {
-    width: calc(2rem + 10px);
-    height: calc(2rem + 10px);
+    width: calc(2rem + 30px);
+    height: calc(2rem + 30px);
   }
 
   .nav-content {
