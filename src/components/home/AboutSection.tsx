@@ -1,5 +1,6 @@
 ﻿import React, { type CSSProperties, type ReactNode } from 'react';
 import { useInView } from '../../hooks/useInView';
+import logoImg from '../../assets/logo.png';
 import './AboutSection.css';
 
 const aboutImage =
@@ -70,7 +71,7 @@ const AboutSection: React.FC = () => {
             About <span className="gradient-text">Mira Gaming</span>
           </h2>
           <p className="about-text">
-            <span className="gradient-text">Mira Gaming Private Limited</span> is an independent game development
+            <strong>Mira Gaming Private Limited</strong> is an independent game development
             company focused on accessible, high-quality mobile entertainment. Founded in 2026, we combine thoughtful
             design with reliable engineering to build games our players enjoy returning to.
           </p>
@@ -106,8 +107,7 @@ const AboutSection: React.FC = () => {
             className="about-img"
           />
           <div className="logo-overlay">
-            <span className="logo-mira">Mira</span>
-            <span className="logo-gaming">Gaming</span>
+            <img src={logoImg} alt="Mira Gaming" className="logo-overlay-img" />
           </div>
         </div>
       </div>

@@ -38,10 +38,25 @@ main {
   flex: 1;
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 section {
   scroll-margin-top: 110px;
+}
+
+@media (max-width: 1024px) {
+  section {
+    scroll-margin-top: 96px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 84px;
+  }
 }
 
 /* Custom scrollbar for better aesthetics */
@@ -79,6 +94,15 @@ section {
   }
   50% {
     transform: translate3d(-1.5rem, 1.8rem, 0) scale(1.08);
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-wrapper::before,
+  .app-wrapper::after {
+    width: 24rem;
+    height: 24rem;
+    opacity: 0.28;
   }
 }
 

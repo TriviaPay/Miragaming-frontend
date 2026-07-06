@@ -1,6 +1,13 @@
-﻿import React, { type CSSProperties, type FormEvent, useState } from 'react';
+﻿import React, { type CSSProperties, type FormEvent, useRef, useState } from 'react';
 import { useInView } from '../../hooks/useInView';
 import { sendContactEmail } from '../../utils/sendContactEmail';
+import {
+  ADMIN_EMAIL,
+  careerMailto,
+  partnershipMailto,
+  triggerEmailAction,
+  type MailtoOptions,
+} from '../../utils/mailto';
 import './ContactFooter.css';
 
 const socials = [
@@ -65,7 +72,30 @@ const ContactFooter: React.FC = () => {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [feedback, setFeedback] = useState('');
+  const [emailToast, setEmailToast] = useState('');
+  const messageRef = useRef<HTMLTextAreaElement>(null);
   const charactersLeft = MESSAGE_MAX_LENGTH - message.length;
+
+  const handleEmailClick = async (options: MailtoOptions) => {
+    const toastMessage = await triggerEmailAction(options);
+    setEmailToast(toastMessage);
+    setFeedback('');
+    setStatus('idle');
+
+    if (options.body) {
+      setMessage(options.body);
+    }
+
+    window.setTimeout(() => {
+      document.getElementById('contact-message-form')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+      messageRef.current?.focus();
+    }, 120);
+
+    window.setTimeout(() => setEmailToast(''), 6000);
+  };
 
   const handleMessageChange = (value: string) => {
     setMessage(value.slice(0, MESSAGE_MAX_LENGTH));
@@ -104,9 +134,13 @@ const ContactFooter: React.FC = () => {
     >
       <div className="container footer-headline">
         <p>Interested in partnerships, publishing, or collaboration with Mira Gaming?</p>
-        <a href="mailto:hello@miragaming.com" className="headline-btn">
+        <button
+          type="button"
+          className="headline-btn mail-link"
+          onClick={() => handleEmailClick(partnershipMailto)}
+        >
           Get in touch
-        </a>
+        </button>
       </div>
 
       <div className="container footer-grid">
@@ -120,7 +154,15 @@ const ContactFooter: React.FC = () => {
               </svg>
               <div>
                 <p className="label">Email</p>
-                <p className="value">hello@miragaming.com</p>
+                <p className="value">
+                  <button
+                    type="button"
+                    className="mail-link mail-link-inline"
+                    onClick={() => handleEmailClick(partnershipMailto)}
+                  >
+                    {ADMIN_EMAIL}
+                  </button>
+                </p>
               </div>
             </div>
 
@@ -130,7 +172,7 @@ const ContactFooter: React.FC = () => {
               </svg>
               <div>
                 <p className="label">Response Time</p>
-                <p className="value">Within 2 business days</p>
+                <p className="value">Within business hours</p>
               </div>
             </div>
 
@@ -169,8 +211,13 @@ const ContactFooter: React.FC = () => {
           </div>
         </div>
 
-        <div className="footer-section footer-message">
+        <div className="footer-section footer-message" id="contact-message-form">
           <h3 className="footer-title">Send Us a Message</h3>
+          {emailToast ? (
+            <p className="email-toast" role="status" aria-live="polite">
+              {emailToast}
+            </p>
+          ) : null}
           <form className="message-form" onSubmit={handleSubmit} noValidate>
             <div className="form-row">
               <input
@@ -196,6 +243,8 @@ const ContactFooter: React.FC = () => {
             </div>
             <div className="form-textarea-wrap">
               <textarea
+                ref={messageRef}
+                id="contact-message"
                 name="message"
                 placeholder="Message"
                 className="form-textarea"
@@ -248,9 +297,13 @@ const ContactFooter: React.FC = () => {
             </ul>
             <p className="careers-note">
               To apply, email us at{' '}
-              <a href="mailto:hello@miragaming.com?subject=Career%20Enquiry%20-%20Mira%20Gaming">
-                hello@miragaming.com
-              </a>
+              <button
+                type="button"
+                className="mail-link mail-link-inline"
+                onClick={() => handleEmailClick(careerMailto)}
+              >
+                {ADMIN_EMAIL}
+              </button>
             </p>
           </div>
 
@@ -259,16 +312,17 @@ const ContactFooter: React.FC = () => {
             <p className="partnership-text">
               We are open to conversations with publishers, platforms, and investors aligned with our product vision.
             </p>
-            <a
-              href="mailto:hello@miragaming.com?subject=Partnership%20Inquiry%20-%20Mira%20Gaming"
-              className="partnership-btn"
+            <button
+              type="button"
+              className="partnership-btn mail-link"
+              onClick={() => handleEmailClick(partnershipMailto)}
             >
               Partnership Inquiries
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
-            </a>
+            </button>
           </div>
         </div>
       </div>

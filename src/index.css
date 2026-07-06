@@ -17,6 +17,15 @@
   --radius-lg: 22px;
   --radius-md: 14px;
 
+  /* Responsive breakpoints: mobile ≤768px, tablet ≤1024px, desktop >1024px */
+  --bp-mobile: 768px;
+  --bp-tablet: 1024px;
+
+  /* Horizontal page gutters */
+  --page-gutter: 2rem;
+  --page-gutter-tablet: 1.5rem;
+  --page-gutter-mobile: 1.25rem;
+
   font-family: 'Sora', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -109,13 +118,15 @@ img {
 
 .container {
   max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 1.75rem;
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+  width: 100%;
 }
 
 .section-shell {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .fade-section {
@@ -129,9 +140,15 @@ img {
   transform: translateY(0);
 }
 
+@media (max-width: 1024px) {
+  .container {
+    padding-inline: var(--page-gutter-tablet);
+  }
+}
+
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding-inline: var(--page-gutter-mobile);
   }
 }
 

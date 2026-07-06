@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import logoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 const navItems = [
@@ -28,7 +29,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 880) {
+      if (window.innerWidth > 1024) {
         setMenuOpen(false);
       }
     };
@@ -47,6 +48,7 @@ const Navbar: React.FC = () => {
 
       <div className="container nav-content">
         <a className="logo" href="#home" onClick={closeMenu}>
+          <img src={logoImg} alt="" className="logo-img" aria-hidden="true" />
           <span className="logo-mira">Mira</span>
           <span className="logo-gaming">Gaming</span>
         </a>

@@ -21,9 +21,15 @@
 .about-text {
   margin-top: 1.2rem;
   margin-bottom: 1.5rem;
-  color: #52637a;
+  color: #011e49;
   line-height: 1.75;
   font-size: 1.03rem;
+  font-weight: 500;
+}
+
+.about-text strong {
+  color: #011e49;
+  font-weight: 700;
 }
 
 .about-highlights {
@@ -132,23 +138,19 @@
   z-index: 3;
   display: inline-flex;
   align-items: center;
-  gap: 0.28rem;
-  padding: 0.72rem 1rem;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(37, 99, 235, 0.22);
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.62);
-  font-family: 'Space Grotesk', 'Sora', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
-.logo-overlay .logo-mira,
-.logo-overlay .logo-gaming {
-  background: linear-gradient(100deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.logo-overlay-img {
+  width: calc(3.25rem + 10px);
+  height: calc(3.25rem + 10px);
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: screen;
 }
 
 .floating-card {
@@ -188,8 +190,13 @@
 }
 
 @media (max-width: 1024px) {
+  .about-section {
+    padding: 5.5rem 0;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .about-content {
@@ -200,6 +207,23 @@
     max-width: 640px;
     margin: 0 auto;
     width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .stat-item {
+    padding: 0.8rem 0.65rem;
+  }
+
+  .stat-info h3 {
+    font-size: clamp(1rem, 2.2vw, 1.18rem);
+  }
+
+  .about-text {
+    font-size: clamp(0.95rem, 1.8vw, 1.03rem);
   }
 }
 
@@ -220,6 +244,20 @@
   }
 
   .about-img {
-    min-height: 330px;
+    min-height: clamp(260px, 55vw, 330px);
+  }
+
+  .logo-overlay {
+    top: 1.2rem;
+    left: 1.2rem;
+  }
+
+  .logo-overlay-img {
+    width: calc(2.6rem + 10px);
+    height: calc(2.6rem + 10px);
+  }
+
+  .about-highlights span {
+    font-size: 0.68rem;
   }
 }
