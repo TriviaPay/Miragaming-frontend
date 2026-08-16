@@ -145,11 +145,9 @@ const GamesGrid: React.FC = () => {
                     {game.status}
                   </span>
                 </div>
-                {game.webUrl || game.playStoreUrl || game.appStoreUrl ? (
+                {game.status === 'Live' && (game.webUrl || game.playStoreUrl || game.appStoreUrl) ? (
                   <div className="store-links-wrap">
-                    <p className="store-links-label">
-                      {game.status === 'Live' ? 'Available on' : 'App links'}
-                    </p>
+                    <p className="store-links-label">Available on</p>
                     <div className="store-links">
                       {game.webUrl ? (
                         <a
