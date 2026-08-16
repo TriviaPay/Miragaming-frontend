@@ -1,0 +1,250 @@
+.legal-page {
+  position: relative;
+  z-index: 2;
+  padding: 7.25rem 0 4.5rem;
+  overflow-x: hidden;
+}
+
+.legal-layout {
+  max-width: 1180px;
+}
+
+.legal-header {
+  margin-bottom: 1.75rem;
+}
+
+.legal-kicker {
+  display: inline-flex;
+  margin-bottom: 0.85rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(37, 99, 235, 0.28);
+  color: #1d4ed8;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.legal-title {
+  margin-bottom: 1rem;
+  font-size: clamp(1.7rem, 4vw, 2.55rem);
+  line-height: 1.15;
+  color: #011e49;
+  overflow-wrap: anywhere;
+}
+
+.legal-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.legal-meta-grid > div {
+  min-width: 0;
+  padding: 0.8rem 0.9rem;
+  border-radius: 14px;
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.legal-meta-grid dt {
+  margin-bottom: 0.2rem;
+  color: #687890;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.legal-meta-grid dd {
+  color: #011e49;
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.legal-meta-grid a {
+  color: #1d4ed8;
+}
+
+.legal-body-wrap {
+  display: grid;
+  grid-template-columns: minmax(210px, 260px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.legal-toc {
+  position: sticky;
+  top: 5.6rem;
+  max-height: calc(100vh - 6.5rem);
+  overflow: auto;
+  padding: 1rem 0.9rem 1rem 0;
+}
+
+.legal-toc-title {
+  margin-bottom: 0.7rem;
+  color: #0f172a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.legal-toc ol {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-toc a {
+  display: block;
+  color: #52637a;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.legal-toc a:hover {
+  color: #1d4ed8;
+}
+
+.legal-body-wrap-plain {
+  grid-template-columns: 1fr;
+}
+
+.legal-article {
+  min-width: 0;
+  max-width: 760px;
+}
+
+.legal-intro,
+.legal-section p,
+.legal-section li {
+  color: #011e49;
+  font-size: clamp(0.92rem, 1.8vw, 1rem);
+  line-height: 1.72;
+  overflow-wrap: anywhere;
+}
+
+.legal-intro {
+  margin-bottom: 1.5rem;
+}
+
+.legal-section {
+  margin-bottom: 1.85rem;
+  scroll-margin-top: 5.8rem;
+}
+
+.legal-section h2 {
+  margin-bottom: 0.7rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.28rem);
+  line-height: 1.3;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.legal-section h3 {
+  margin: 1.1rem 0 0.45rem;
+  font-size: 1rem;
+  color: #1d4ed8;
+}
+
+.legal-section p + p {
+  margin-top: 0.72rem;
+}
+
+.legal-section ul {
+  margin: 0.65rem 0 0.85rem;
+  padding-left: 1.15rem;
+}
+
+.legal-section li {
+  margin-bottom: 0.32rem;
+}
+
+.legal-section a {
+  color: #1d4ed8;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.legal-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  margin-top: 2.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(37, 99, 235, 0.16);
+}
+
+.legal-page-nav a {
+  color: #1d4ed8;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.legal-page-nav a:hover {
+  color: #ea580c;
+}
+
+.legal-back {
+  margin-top: 1.25rem;
+}
+
+.legal-back a {
+  color: #52637a;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .legal-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .legal-body-wrap {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .legal-toc {
+    position: static;
+    max-height: none;
+    padding: 0.9rem 1rem;
+    border-radius: 16px;
+    border: 1px solid rgba(37, 99, 235, 0.14);
+    background: rgba(248, 251, 255, 0.92);
+  }
+
+  .legal-toc ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .legal-page {
+    padding: 6.1rem 0 3rem;
+  }
+
+  .legal-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-toc ol {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-section {
+    scroll-margin-top: 5.2rem;
+  }
+
+  .legal-section ul {
+    padding-left: 1rem;
+  }
+}

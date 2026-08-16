@@ -3,6 +3,7 @@ import { useInView } from '../../hooks/useInView';
 import walkChampImg from '../../assets/walkchamp.png';
 import triviCoinImg from '../../assets/triviacoin.png';
 import vibeLinkImg from '../../assets/vibelink.png';
+import { appUrls } from '../../config/appUrls';
 import './GamesGrid.css';
 
 type Game = {
@@ -13,6 +14,7 @@ type Game = {
   genre: string;
   platform: string;
   status: 'Live' | 'Under Development';
+  webUrl?: string;
   playStoreUrl?: string;
   appStoreUrl?: string;
 };
@@ -67,8 +69,9 @@ const games: Game[] = [
     genre: 'Fitness PvP',
     platform: 'Mobile',
     status: 'Live',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.miragaming.walkchamp',
-    appStoreUrl: 'https://apps.apple.com/app/walk-champ/id1234567890',
+    webUrl: appUrls.walkchamp.web,
+    playStoreUrl: appUrls.walkchamp.playStore,
+    appStoreUrl: appUrls.walkchamp.appStore,
   },
   {
     title: 'TRIVIA COIN',
@@ -78,6 +81,9 @@ const games: Game[] = [
     genre: 'Quiz Battle',
     platform: 'Web + App',
     status: 'Under Development',
+    webUrl: appUrls.triviaCoin.web,
+    playStoreUrl: appUrls.triviaCoin.playStore,
+    appStoreUrl: appUrls.triviaCoin.appStore,
   },
   {
     title: 'VIBE LINK',
@@ -85,8 +91,11 @@ const games: Game[] = [
     image: vibeLinkImg,
     color: '#a78bfa',
     genre: 'Social Play',
-    platform: 'Mobile + Web',
+    platform: 'Mobile',
     status: 'Under Development',
+    webUrl: appUrls.vibeLink.web,
+    playStoreUrl: appUrls.vibeLink.playStore,
+    appStoreUrl: appUrls.vibeLink.appStore,
   },
 ];
 
@@ -136,10 +145,22 @@ const GamesGrid: React.FC = () => {
                     {game.status}
                   </span>
                 </div>
-                {game.status === 'Live' && (game.playStoreUrl || game.appStoreUrl) ? (
+                {game.webUrl || game.playStoreUrl || game.appStoreUrl ? (
                   <div className="store-links-wrap">
-                    <p className="store-links-label">Available on</p>
+                    <p className="store-links-label">
+                      {game.status === 'Live' ? 'Available on' : 'App links'}
+                    </p>
                     <div className="store-links">
+                      {game.webUrl ? (
+                        <a
+                          href={game.webUrl}
+                          className="store-link store-link-web"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Open Web App
+                        </a>
+                      ) : null}
                       {game.playStoreUrl ? (
                         <a
                           href={game.playStoreUrl}
@@ -162,8 +183,6 @@ const GamesGrid: React.FC = () => {
                       ) : null}
                     </div>
                   </div>
-                ) : game.status === 'Live' ? (
-                  <span className="learn-more coming-soon">Coming Soon</span>
                 ) : (
                   <span className="learn-more coming-soon">Coming Soon</span>
                 )}

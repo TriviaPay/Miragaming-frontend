@@ -285,7 +285,7 @@
 
 .store-links {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
   gap: 0.55rem;
 }
 
@@ -312,6 +312,10 @@
   transform: translateY(-2px);
   border-color: rgba(37, 99, 235, 0.55);
   background: rgba(37, 99, 235, 0.1);
+}
+
+.store-link-web {
+  grid-column: 1 / -1;
 }
 
 .store-link-apple {

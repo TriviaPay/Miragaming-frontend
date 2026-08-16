@@ -1,6 +1,8 @@
 ﻿import React, { type CSSProperties, type FormEvent, useRef, useState } from 'react';
 import { useInView } from '../../hooks/useInView';
 import { sendContactEmail } from '../../utils/sendContactEmail';
+import { LEGAL_PAGES } from '../../content/legalPages';
+import logoImg from '../../assets/logo.png';
 import {
   ADMIN_EMAIL,
   careerMailto,
@@ -13,7 +15,7 @@ import './ContactFooter.css';
 const socials = [
   {
     name: 'Instagram',
-    url: 'https://www.instagram.com/',
+    url: 'https://www.instagram.com/mira_gaming_pvt_ltd?utm_source=qr',
     renderIcon: (gradientId: string) => (
       <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
         <defs>
@@ -34,7 +36,7 @@ const socials = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/',
+    url: 'https://www.linkedin.com/company/144517896',
     renderIcon: () => (
       <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
         <path
@@ -46,7 +48,7 @@ const socials = [
   },
   {
     name: 'YouTube',
-    url: 'https://www.youtube.com/',
+    url: 'https://www.youtube.com/@MiraGamingPvtLtd',
     renderIcon: () => (
       <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
         <path
@@ -329,11 +331,19 @@ const ContactFooter: React.FC = () => {
 
       <div className="footer-bottom">
         <div className="container bottom-content">
-          <div className="logo tiny-logo">
+          <a className="logo tiny-logo" href="/#home">
+            <img src={logoImg} alt="" className="logo-img" aria-hidden="true" />
             <span className="logo-mira">Mira</span>
             <span className="logo-gaming gradient-text">Gaming</span>
-          </div>
+          </a>
           <p className="copyright">(c) 2026 <span className="gradient-text">Mira Gaming Private Limited</span>. All rights reserved.</p>
+          <nav className="footer-legal-links" aria-label="Legal">
+            {LEGAL_PAGES.map((page) => (
+              <a key={page.path} href={page.path}>
+                {page.navLabel}
+              </a>
+            ))}
+          </nav>
           <div className="bottom-socials">
             <div className="icon-group">
               {socials.map((social) => (
