@@ -75,15 +75,12 @@ const games: Game[] = [
   },
   {
     title: 'TRIVIA COIN',
-    description: 'Answer timed trivia rounds, build streaks, and earn coins on the leaderboard. Currently in active development.',
+    description: 'Answer timed trivia rounds, build streaks, and earn coins on the leaderboard. Web and app versions are coming soon.',
     image: triviCoinImg,
     color: '#f97316',
     genre: 'Quiz Battle',
     platform: 'Web + App',
     status: 'Under Development',
-    webUrl: appUrls.triviaCoin.web,
-    playStoreUrl: appUrls.triviaCoin.playStore,
-    appStoreUrl: appUrls.triviaCoin.appStore,
   },
   {
     title: 'VIBE LINK',

@@ -3,6 +3,7 @@ import { useInView } from '../../hooks/useInView';
 import { sendContactEmail } from '../../utils/sendContactEmail';
 import { LEGAL_PAGES } from '../../content/legalPages';
 import logoImg from '../../assets/logo.png';
+import { paths } from '../../config/paths';
 import {
   ADMIN_EMAIL,
   careerMailto,
@@ -331,7 +332,7 @@ const ContactFooter: React.FC = () => {
 
       <div className="footer-bottom">
         <div className="container bottom-content">
-          <a className="logo tiny-logo" href="/#home">
+          <a className="logo tiny-logo" href={paths.home}>
             <img src={logoImg} alt="" className="logo-img" aria-hidden="true" />
             <span className="logo-mira">Mira</span>
             <span className="logo-gaming gradient-text">Gaming</span>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import logoImg from '../../assets/logo.png';
+import { paths } from '../../config/paths';
 import './Navbar.css';
 
 const navItems = [
-  { label: 'Home', href: '/#home' },
-  { label: 'Games', href: '/#games' },
-  { label: 'About', href: '/#about' },
+  { label: 'Home', href: paths.home },
+  { label: 'Games', href: paths.games },
+  { label: 'About', href: paths.about },
 ];
 
 const Navbar: React.FC = () => {
@@ -47,7 +48,7 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="container nav-content">
-        <a className="logo" href="/#home" onClick={closeMenu}>
+        <a className="logo" href={paths.home} onClick={closeMenu}>
           <img src={logoImg} alt="" className="logo-img" aria-hidden="true" />
           <span className="logo-mira">Mira</span>
           <span className="logo-gaming">Gaming</span>
@@ -62,13 +63,13 @@ const Navbar: React.FC = () => {
             </li>
           ))}
           <li className="mobile-contact-link">
-            <a href="/#contact" onClick={closeMenu}>
+            <a href={paths.contact} onClick={closeMenu}>
               Get in Touch
             </a>
           </li>
         </ul>
 
-        <a href="/#contact" className="get-in-touch-btn">
+        <a href={paths.contact} className="get-in-touch-btn">
           Get in Touch
         </a>
 

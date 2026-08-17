@@ -152,7 +152,7 @@ const LegalPage: FC<LegalPageProps> = ({ page }) => {
               ))}
             </nav>
             <p className="legal-back">
-              <a href="/#home">Back to homepage</a>
+              <a href="/">Back to homepage</a>
             </p>
           </article>
         </div>

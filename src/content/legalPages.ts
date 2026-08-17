@@ -1,3 +1,5 @@
+import { SITE_URL } from '../config/paths';
+
 export type LegalPageContent = {
   slug: string;
   path: string;
@@ -22,7 +24,7 @@ export const LEGAL_PAGES: LegalPageContent[] = [
     effectiveDate: '17 August 2026',
     lastUpdated: '17 August 2026',
     support: 'admin@miragaming.com',
-    publicUrl: 'https://miragaming.com/privacy',
+    publicUrl: `${SITE_URL}/privacy`,
     body: `Mira Gaming ("Mira Gaming," "we," "us," or "our") respects your privacy and is committed to protecting personal information collected through our websites, applications, games, platforms, payment and payout services.
 
 By accessing or using Mira Gaming services, you acknowledge the practices described in this Privacy Policy.
@@ -122,7 +124,7 @@ Email: admin@miragaming.com`,
     effectiveDate: '17 August 2026',
     lastUpdated: '17 August 2026',
     support: 'admin@miragaming.com',
-    publicUrl: 'https://miragaming.com/terms',
+    publicUrl: `${SITE_URL}/terms`,
     body: `These Terms & Conditions govern your access to and use of Mira Gaming websites, applications, games, platforms, payment and payout services.
 
 By registering for, accessing, or using Mira Gaming, you confirm that you have read, understood, and agreed to these Terms & Conditions and our Privacy Policy.
@@ -256,7 +258,7 @@ admin@miragaming.com`,
     effectiveDate: '17 August 2026',
     lastUpdated: '17 August 2026',
     support: 'admin@miragaming.com',
-    publicUrl: 'https://miragaming.com/license',
+    publicUrl: `${SITE_URL}/license`,
     body: `All intellectual property available through the Mira Gaming website, applications, games, platforms, software, branding, graphics, interfaces, logos, text, and content is owned by Mira Gaming or used under appropriate authorization or license.
 
 1. Limited User License
@@ -308,7 +310,7 @@ admin@miragaming.com`,
     title: 'Disclaimer',
     lastUpdated: '17 August 2026',
     support: 'admin@miragaming.com',
-    publicUrl: 'https://miragaming.com/disclaimer',
+    publicUrl: `${SITE_URL}/disclaimer`,
     body: `Mira Gaming provides access to games, digital platforms, payment and payout services.
 
 By accessing, registering for, or using any Mira Gaming website, application, game, platform, payment, or payout service, you acknowledge and agree to comply with our Terms & Conditions, Privacy Policy, applicable game rules, payment and payout requirements, and all applicable laws and regulations.
