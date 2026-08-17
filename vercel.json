@@ -6,6 +6,26 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/walkchamp/privacy-policy",
+      "destination": "/walkchamp/privacy-policy/index.html"
+    },
+    {
+      "source": "/walkchamp/privacy",
+      "destination": "/walkchamp/privacy-policy/index.html"
+    },
+    {
+      "source": "/walkchamp/legal",
+      "destination": "/walkchamp/privacy-policy/index.html"
+    },
+    {
+      "source": "/walkchamp/terms",
+      "destination": "/walkchamp/terms/index.html"
+    },
+    {
+      "source": "/walkchamp/terms-and-conditions",
+      "destination": "/walkchamp/terms/index.html"
+    },
+    {
       "source": "/((?!assets/).*)",
       "destination": "/index.html"
     }
