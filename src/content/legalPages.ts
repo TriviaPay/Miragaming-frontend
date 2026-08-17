@@ -1,6 +1,4 @@
 import { SITE_URL } from '../config/paths';
-import walkChampPrivacyRaw from '../../WALKCHAMP_PRIVACY_POLICY.txt?raw';
-import walkChampTermsRaw from '../../WALKCHAMP_TERMS_AND_CONDITIONS.txt?raw';
 
 export type LegalPageContent = {
   slug: string;
@@ -15,13 +13,6 @@ export type LegalPageContent = {
   publicUrl?: string;
   body: string;
 };
-
-function stripLegalDocumentHeader(raw: string): string {
-  const normalized = raw.replace(/\r\n/g, '\n').trim();
-  const firstSectionIndex = normalized.search(/^1\.\s+/m);
-
-  return firstSectionIndex >= 0 ? normalized.slice(firstSectionIndex).trim() : normalized;
-}
 
 export const LEGAL_PAGES: LegalPageContent[] = [
   {
@@ -258,30 +249,6 @@ These Terms are governed by the laws of India, subject to any mandatory rights o
 For questions about these Terms & Conditions:
 
 admin@miragaming.com`,
-  },
-  {
-    slug: 'walkchamp-privacy',
-    path: '/walkchamp/privacy-policy',
-    aliases: ['/walkchamp/privacy', '/walkchamp/legal', '/walkchamp/privacy%20policy'],
-    navLabel: 'WalkChamp Privacy Policy',
-    title: 'WalkChamp Privacy Policy',
-    lastUpdated: 'July 21, 2026',
-    support: 'admin@miragaming.com',
-    publicUrl: `${SITE_URL}/walkchamp/privacy-policy`,
-    body: stripLegalDocumentHeader(walkChampPrivacyRaw),
-  },
-  {
-    slug: 'walkchamp-terms',
-    path: '/walkchamp/terms',
-    aliases: ['/walkchamp/terms-and-conditions', '/walkchamp/terms%20and%20conditions'],
-    navLabel: 'WalkChamp Terms & Conditions',
-    title: 'WalkChamp Terms & Conditions',
-    effectiveDate: '2026-07-21',
-    lastUpdated: 'July 21, 2026',
-    version: '1.0',
-    support: 'admin@miragaming.com',
-    publicUrl: `${SITE_URL}/walkchamp/terms`,
-    body: stripLegalDocumentHeader(walkChampTermsRaw),
   },
   {
     slug: 'license',
