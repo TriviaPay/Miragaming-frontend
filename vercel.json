@@ -7,23 +7,23 @@
   "rewrites": [
     {
       "source": "/walkchamp/privacy-policy",
-      "destination": "/walkchamp/privacy-policy/index.html"
+      "destination": "/walkchamp/privacy-policy.html"
     },
     {
       "source": "/walkchamp/privacy",
-      "destination": "/walkchamp/privacy-policy/index.html"
+      "destination": "/walkchamp/privacy-policy.html"
     },
     {
       "source": "/walkchamp/legal",
-      "destination": "/walkchamp/privacy-policy/index.html"
+      "destination": "/walkchamp/privacy-policy.html"
     },
     {
       "source": "/walkchamp/terms",
-      "destination": "/walkchamp/terms/index.html"
+      "destination": "/walkchamp/terms.html"
     },
     {
       "source": "/walkchamp/terms-and-conditions",
-      "destination": "/walkchamp/terms/index.html"
+      "destination": "/walkchamp/terms.html"
     },
     {
       "source": "/((?!assets/).*)",
