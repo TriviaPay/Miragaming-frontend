@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Submit a request to delete your WalkChamp account." />
+    <meta name="theme-color" content="#061b4a" />
+    <title>Delete your WalkChamp account | WalkChamp</title>
+    <link rel="canonical" href="https://www.miragaming.com/walkchamp/delete-account" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #03112f;
+        color: #f8fbff;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        background:
+          radial-gradient(circle at 15% 10%, rgba(53, 136, 255, 0.24), transparent 34rem),
+          radial-gradient(circle at 90% 85%, rgba(28, 213, 170, 0.13), transparent 30rem),
+          linear-gradient(145deg, #04143a 0%, #071d4d 52%, #03112f 100%);
+      }
+
+      a { color: #8fc4ff; }
+      a:hover { color: #c2ddff; }
+
+      .site-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(2, 12, 37, 0.68);
+        backdrop-filter: blur(14px);
+      }
+
+      .site-header__inner, main, footer {
+        width: min(100% - 2rem, 760px);
+        margin-inline: auto;
+      }
+
+      .site-header__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 68px;
+        gap: 1rem;
+      }
+
+      .brand {
+        color: #70b4ff;
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+      }
+
+      .back-link { font-size: 0.9rem; font-weight: 650; text-decoration: none; }
+      main { padding-block: clamp(3rem, 8vw, 6rem); }
+
+      .eyebrow {
+        margin: 0 0 0.65rem;
+        color: #72deb7;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 16ch;
+        margin: 0;
+        font-size: clamp(2.15rem, 7vw, 4rem);
+        line-height: 1.03;
+        letter-spacing: -0.04em;
+      }
+
+      .intro {
+        max-width: 62ch;
+        margin: 1.25rem 0 2rem;
+        color: #c9d8f2;
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .card {
+        margin-top: 1rem;
+        padding: clamp(1.35rem, 4vw, 2rem);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 22px;
+        background: rgba(8, 29, 73, 0.82);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 { margin: 0 0 1rem; font-size: 1.3rem; letter-spacing: -0.015em; }
+      ol, ul { margin: 0; padding-left: 1.35rem; color: #dce7fa; line-height: 1.75; }
+      li + li { margin-top: 0.4rem; }
+      button { font: inherit; }
+
+      .primary-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        margin-top: 1.15rem;
+        padding: 0.75rem 1.15rem;
+        border: 0;
+        border-radius: 999px;
+        background: #2f8cff;
+        color: #ffffff;
+        font-weight: 750;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(47, 140, 255, 0.3);
+      }
+
+      .primary-button:hover { background: #58a3ff; }
+      .primary-button:disabled { cursor: wait; opacity: 0.65; }
+      .note { color: #afc2e2; font-size: 0.92rem; line-height: 1.65; }
+      .note strong { color: #f8fbff; }
+      footer { padding-block: 0 2.5rem; color: #8197bd; font-size: 0.82rem; }
+
+      dialog {
+        width: min(100% - 2rem, 500px);
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 22px;
+        background: #081d49;
+        color: #f8fbff;
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+      }
+
+      dialog::backdrop { background: rgba(1, 7, 22, 0.78); backdrop-filter: blur(5px); }
+      .dialog-inner { padding: clamp(1.4rem, 5vw, 2rem); }
+      .dialog-header { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+      .dialog-header h2 { margin: 0; }
+
+      .close-button {
+        flex: 0 0 auto;
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      label { display: block; margin-top: 1rem; color: #dce7fa; font-size: 0.9rem; font-weight: 700; }
+
+      input {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 0.45rem;
+        padding: 0.7rem 0.85rem;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 12px;
+        outline: none;
+        background: #041438;
+        color: #ffffff;
+        font: inherit;
+      }
+
+      input:focus { border-color: #58a3ff; box-shadow: 0 0 0 3px rgba(47, 140, 255, 0.2); }
+      .form-status { min-height: 1.4rem; margin: 0.9rem 0 0; color: #ff9e9e; font-size: 0.9rem; }
+      .success-dialog { text-align: center; }
+      .success-dialog h2 { color: #72deb7; }
+
+      @media (max-width: 460px) {
+        .site-header__inner, main, footer { width: min(100% - 1.25rem, 760px); }
+        .site-header__inner { min-height: 60px; }
+        .back-link { font-size: 0.82rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="/">WalkChamp</a>
+        <a class="back-link" href="/">Home</a>
+      </div>
+    </header>
+
+    <main>
+      <p class="eyebrow">Account support</p>
+      <h1>Delete your WalkChamp account</h1>
+      <p class="intro">
+        Submit an account deletion request from WalkChamp or use the secure request form below if
+        you no longer have access to the app.
+      </p>
+
+      <section class="card" aria-labelledby="delete-in-app">
+        <h2 id="delete-in-app">Request deletion in WalkChamp</h2>
+        <ol>
+          <li>Open <strong>WalkChamp</strong>.</li>
+          <li>Go to <strong>Profile</strong>.</li>
+          <li>Select <strong>Request Account Deletion</strong> and follow the confirmation steps.</li>
+        </ol>
+      </section>
+
+      <section class="card" aria-labelledby="delete-without-app">
+        <h2 id="delete-without-app">Request deletion without the app</h2>
+        <p class="note">
+          Enter the email address associated with your account. Your request will be delivered to
+          <a href="mailto:admin@miragaming.com">admin@miragaming.com</a>. We may ask you to verify
+          account ownership before completing the request.
+        </p>
+        <button class="primary-button" id="open-request" type="button">Request account deletion</button>
+      </section>
+
+      <section class="card" aria-labelledby="before-delete">
+        <h2 id="before-delete">Before you delete</h2>
+        <ul>
+          <li>Withdraw any eligible cash balance before requesting deletion.</li>
+          <li>Account deletion is permanent and cannot be undone.</li>
+          <li>
+            Some payment, tax, fraud-prevention, dispute, or other legal records may be retained
+            for the period required by applicable law.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      For WalkChamp account-deletion questions, contact
+      <a href="mailto:admin@miragaming.com">admin@miragaming.com</a>.
+    </footer>
+
+    <dialog id="request-dialog" aria-labelledby="request-title">
+      <div class="dialog-inner">
+        <div class="dialog-header">
+          <div>
+            <p class="eyebrow">WalkChamp support</p>
+            <h2 id="request-title">Request account deletion</h2>
+          </div>
+          <button class="close-button" id="close-request" type="button" aria-label="Close">&#10005;</button>
+        </div>
+        <p class="note">Provide the details registered to your WalkChamp account.</p>
+        <form id="deletion-form">
+          <label>
+            Account email
+            <input name="email" type="email" autocomplete="email" maxlength="254" required />
+          </label>
+          <label>
+            WalkChamp username <span class="note">(optional)</span>
+            <input name="username" type="text" autocomplete="username" maxlength="64" />
+          </label>
+          <input name="website" type="text" tabindex="-1" autocomplete="off" hidden />
+          <p class="form-status" id="form-status" role="alert"></p>
+          <button class="primary-button" id="submit-request" type="submit">Send deletion request</button>
+        </form>
+      </div>
+    </dialog>
+
+    <dialog id="success-dialog" class="success-dialog" aria-labelledby="success-title">
+      <div class="dialog-inner">
+        <h2 id="success-title">Request sent</h2>
+        <p class="note">
+          Your account deletion request was emailed to admin@miragaming.com. The WalkChamp team
+          will review it.
+        </p>
+        <button class="primary-button" id="close-success" type="button">Done</button>
+      </div>
+    </dialog>
+
+    <script>
+      const requestDialog = document.getElementById('request-dialog');
+      const successDialog = document.getElementById('success-dialog');
+      const form = document.getElementById('deletion-form');
+      const status = document.getElementById('form-status');
+      const submitButton = document.getElementById('submit-request');
+
+      document.getElementById('open-request').addEventListener('click', () => requestDialog.showModal());
+      document.getElementById('close-request').addEventListener('click', () => requestDialog.close());
+      document.getElementById('close-success').addEventListener('click', () => successDialog.close());
+
+      requestDialog.addEventListener('click', (event) => {
+        if (event.target === requestDialog) requestDialog.close();
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        status.textContent = '';
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+
+        const data = new FormData(form);
+        try {
+          const response = await fetch('https://api.walkchamp.miragaming.com/api/account-deletion-request', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: String(data.get('email') || '').trim(),
+              username: String(data.get('username') || '').trim(),
+              website: String(data.get('website') || ''),
+            }),
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(result.error || 'Request was not accepted');
+
+          form.reset();
+          requestDialog.close();
+          successDialog.showModal();
+        } catch (error) {
+          status.textContent = error instanceof Error
+            ? error.message
+            : 'We could not send your request. Please try again or email admin@miragaming.com.';
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send deletion request';
+        }
+      });
+    </script>
+  </body>
+</html>

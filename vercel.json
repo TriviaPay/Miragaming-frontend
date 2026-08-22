@@ -4,7 +4,18 @@
   "installCommand": "npm ci",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/delete-account",
+      "destination": "/walkchamp/delete-account",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/walkchamp/delete-account",
+      "destination": "/delete-account.html"
+    },
     {
       "source": "/walkchamp/privacy-policy",
       "destination": "/walkchamp/privacy-policy.html"
