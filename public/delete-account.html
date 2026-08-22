@@ -150,9 +150,9 @@
 
       label { display: block; margin-top: 1rem; color: #dce7fa; font-size: 0.9rem; font-weight: 700; }
 
-      input {
+      input,
+      textarea {
         width: 100%;
-        min-height: 48px;
         margin-top: 0.45rem;
         padding: 0.7rem 0.85rem;
         border: 1px solid rgba(255, 255, 255, 0.18);
@@ -163,7 +163,10 @@
         font: inherit;
       }
 
-      input:focus { border-color: #58a3ff; box-shadow: 0 0 0 3px rgba(47, 140, 255, 0.2); }
+      input { min-height: 48px; }
+      textarea { min-height: 112px; resize: vertical; }
+      input:focus,
+      textarea:focus { border-color: #58a3ff; box-shadow: 0 0 0 3px rgba(47, 140, 255, 0.2); }
       .form-status { min-height: 1.4rem; margin: 0.9rem 0 0; color: #ff9e9e; font-size: 0.9rem; }
       .success-dialog { text-align: center; }
       .success-dialog h2 { color: #72deb7; }
@@ -247,6 +250,14 @@
             WalkChamp username <span class="note">(optional)</span>
             <input name="username" type="text" autocomplete="username" maxlength="64" />
           </label>
+          <label>
+            Notes <span class="note">(optional)</span>
+            <textarea
+              name="notes"
+              maxlength="2000"
+              placeholder="Add any information that will help us identify or process your account request."
+            ></textarea>
+          </label>
           <input name="website" type="text" tabindex="-1" autocomplete="off" hidden />
           <p class="form-status" id="form-status" role="alert"></p>
           <button class="primary-button" id="submit-request" type="submit">Send deletion request</button>
@@ -294,6 +305,7 @@
             body: JSON.stringify({
               email: String(data.get('email') || '').trim(),
               username: String(data.get('username') || '').trim(),
+              notes: String(data.get('notes') || '').trim(),
               website: String(data.get('website') || ''),
             }),
           });
