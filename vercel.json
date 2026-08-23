@@ -37,7 +37,7 @@
       "destination": "/walkchamp/terms.html"
     },
     {
-      "source": "/((?!assets/).*)",
+      "source": "/((?!assets/|google.*\\.html).*)",
       "destination": "/index.html"
     }
   ],
